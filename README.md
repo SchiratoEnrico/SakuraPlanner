@@ -124,6 +124,7 @@ Make sure Docker Desktop is running, then execute:
 
 5. **Run the Frontend (Angular):**
    Open a new terminal window, navigate to the frontend folder, install dependencies, and start the development server:
+   ```bash
    cd frontend
    npm install
    ng serve
