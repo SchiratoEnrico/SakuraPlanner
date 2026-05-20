@@ -112,7 +112,8 @@ Make sure you have the following installed on your system:
 
 3. Start the Infrastructure (Database):
 Make sure Docker Desktop is running, then execute:
-docker-compose up -d
+   ```bash
+   docker-compose up -d
 
 *This will download and spin up the PostgreSQL 15 container in the background.*
 
