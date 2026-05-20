@@ -12,6 +12,20 @@ Developed as a personal portfolio project, this application demonstrates the imp
 
 ---
 
+## 📊 Project Status & Current Phase
+
+We are currently in **Phase 1: Architecture Setup & Core Data Modeling**.
+
+- [x] Project architecture design and Tech Stack definition.
+- [x] Docker environment configuration for PostgreSQL.
+- [x] Database connection setup in Spring Boot.
+- [•] Core Backend Entities definition (In progress: `User` entity created).
+- [ ] Backend REST APIs and Service Layer implementation.
+- [ ] Angular Standalone Frontend initialization and layout structure.
+- [ ] External Third-Party APIs Integration.
+
+---
+
 ## ✨ Core Features
 
 - 🔐 **Secure Authentication**: User registration and login using Spring Security and JWT (JSON Web Tokens).
@@ -71,6 +85,47 @@ The relational database is structured to efficiently handle the itinerary hierar
 | **Trip** | Contains metadata like Title (e.g., "Autumn in Kyoto"), Start Date, End Date, and Total Budget. | Many-to-One with User |
 | **TripDay** | Represents a specific day within the trip (e.g., "Day 1 - Arrival"). | Many-to-One with Trip |
 | **Activity** | The individual event or place to visit (e.g., "Senso-ji Temple"), including start time, end time, location data, and cost. | Many-to-One with TripDay |
+
+---
+
+## 🚀 Getting Started & How to Run
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+Make sure you have the following installed on your system:
+- **Java JDK 17 or 21**
+- **Node.js** (LTS version) & **Angular CLI**
+- **Docker & Docker Compose**
+- An IDE (e.g., **Eclipse**, IntelliJ, or VS Code)
+
+### Step-by-Step Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/sakura-planner.git](https://github.com/YOUR_USERNAME/sakura-planner.git)
+   cd sakura-planner
+2. Environment Configuration:
+
+- Copy the .env.example file and rename it to .env.
+- The default configuration works out of the box with the Docker container setup.
+
+3. Start the Infrastructure (Database):
+Make sure Docker Desktop is running, then execute:
+  ```bash
+  docker-compose up -d
+*This will download and spin up the PostgreSQL 15 container in the background.*
+
+4. **Run the Backend (Spring Boot):**
+   - Import the `backend` folder into your IDE (as an *Existing Maven Project*).
+   - Locate the main application class (with `@SpringBootApplication`) and run it as a **Java Application**.
+   - *Alternatively, via terminal from the backend folder:* `./mvnw spring-boot:run`
+
+5. **Run the Frontend (Angular):**
+   Open a new terminal window, navigate to the frontend folder, install dependencies, and start the development server:
+   cd frontend
+   npm install
+   ng serve
 
 ---
 
