@@ -1,4 +1,4 @@
-package com.sakuraplanner.repository;
+package com.sakuraplanner.backend.repositories;
 
 import com.sakuraplanner.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
