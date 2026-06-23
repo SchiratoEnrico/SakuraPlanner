@@ -1,6 +1,6 @@
 package com.sakuraplanner.backend.config;
 
-import com.sakuraplanner.security.JwtAuthenticationFilter;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import com.sakuraplanner.backend.security.JwtAuthenticationFilter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +32,7 @@ public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             // 1. Enable CORS for Angular frontend
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -63,7 +65,7 @@ public class SecurityConfig {
      * to securely communicate with this Spring Boot backend.
      */
     @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("http://localhost:4200")); // Angular dev server
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));

@@ -1,9 +1,11 @@
 package com.sakuraplanner.backend.security;
 
-import com.sakuraplanner.entity.User;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.sakuraplanner.backend.entity.User;
 
 import java.util.Collection;
 import java.util.List;

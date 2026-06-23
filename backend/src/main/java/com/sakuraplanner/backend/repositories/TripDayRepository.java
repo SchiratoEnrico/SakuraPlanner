@@ -1,8 +1,10 @@
 package com.sakuraplanner.backend.repositories;
 
-import com.sakuraplanner.entity.TripDay;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.sakuraplanner.backend.entity.TripDay;
 
 import java.util.List;
 

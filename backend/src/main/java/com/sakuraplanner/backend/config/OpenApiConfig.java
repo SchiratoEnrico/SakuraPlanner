@@ -1,12 +1,13 @@
 package com.sakuraplanner.backend.config;
 
-import io.openapi.models.Components;
-import io.openapi.models.OpenAPI;
-import io.openapi.models.info.Info;
-import io.openapi.models.security.SecurityRequirement;
-import io.openapi.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 
 /**
  * Configuration class to set up Swagger/OpenAPI documentation.
@@ -19,7 +20,7 @@ public class OpenApiConfig {
      * Defines the OpenAPI bean definition with custom metadata and JWT security scheme.
      */
     @Bean
-    public OpenAPI customOpenAPI() {
+    OpenAPI customOpenAPI() {
         final String securitySchemeName = "bearerAuth";
         
         return new OpenAPI()
