@@ -43,4 +43,22 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(errorPayload, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(org.springframework.security.authentication.BadCredentialsException.class)
+    public ResponseEntity<ErrorResponse> handleBadCredentialsException() {
+        String resolvedMessage = messageSource.getMessage("ERR_AUTH_001", null, LocaleContextHolder.getLocale());
+        return new ResponseEntity<>(
+                new ErrorResponse("ERR_AUTH_001", resolvedMessage, LocalDateTime.now()), 
+                HttpStatus.UNAUTHORIZED
+        );
+    }
+
+    @ExceptionHandler(org.springframework.security.authentication.DisabledException.class)
+    public ResponseEntity<ErrorResponse> handleDisabledException() {
+        String resolvedMessage = messageSource.getMessage("ERR_AUTH_004", null, LocaleContextHolder.getLocale());
+        return new ResponseEntity<>(
+                new ErrorResponse("ERR_AUTH_004", resolvedMessage, LocalDateTime.now()), 
+                HttpStatus.FORBIDDEN
+        );
+    }
 }

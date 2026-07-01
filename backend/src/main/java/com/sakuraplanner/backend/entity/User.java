@@ -36,6 +36,9 @@ public class User {
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
     
+    @Column(nullable = false)
+    private boolean enabled = false;
+    
     /**
      * JPA callback to automatically set the creation timestamp 
      * right before the entity is saved to the database for the first time.
